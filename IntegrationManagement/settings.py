@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third-party
+    'multiselectfield',
     # Local
     'users.apps.UsersConfig'
 ]
@@ -123,3 +125,11 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = 'users.CustomUser' #new
+
+TEMPLATES = [
+    {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    },
+]
+
+LOGIN_REDIRECT_URL = '/'
