@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #third-party
     'multiselectfield',
+    'crispy_forms',
     # Local
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'courses.apps.CoursesConfig'
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-AUTH_USER_MODEL = 'users.CustomUser' #new
+AUTH_USER_MODEL = 'users.FacultyUser' #new
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+
+LOGIN_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
